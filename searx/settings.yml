@@ -18,7 +18,6 @@ general:
   open_metrics: ''
 
 brand:
-  new_issue_url: https://github.com/searxng/searxng/issues/new
   docs_url: https://docs.searxng.org/
   public_instances: https://searx.space
   wiki_url: https://github.com/searxng/searxng/wiki
@@ -28,6 +27,15 @@ brand:
   #   links:
   #     Uptime: https://uptime.searxng.org/history/darmarit-org
   #     About: "https://searxng.org"
+  # pwa_colors:
+  #   # Custom settings for PWA icon an colors used in manifest.json
+  #   # Default colors are:
+  #    theme_color_light: "#3050ff"
+  #    background_color_light: "fff"
+  #    theme_color_dark: "#58f"
+  #    background_color_dark: "#222428"
+  #    theme_color_black: "#3050ff"
+  #    background_color_black: "#000"
 
 search:
   # Filter results. 0: None, 1: Moderate, 2: Strict
@@ -294,7 +302,7 @@ engines:
   - name: 360search
     engine: 360search
     shortcut: 360so
-    timeout: 10.0
+    timeout: 20.0
     disabled: true
 
   - name: 360search videos
@@ -413,6 +421,27 @@ engines:
     shortcut: conda
     disabled: true
 
+  - name: aol
+    engine: aol
+    search_type: search
+    categories: [general]
+    shortcut: aol
+    disabled: true
+
+  - name: aol images
+    engine: aol
+    search_type: image
+    categories: [images]
+    shortcut: aoli
+    disabled: true
+
+  - name: aol videos
+    engine: aol
+    search_type: video
+    categories: [videos]
+    shortcut: aolv
+    disabled: true
+
   - name: arch linux wiki
     engine: archlinux
     shortcut: al
@@ -439,11 +468,6 @@ engines:
   - name: arxiv
     engine: arxiv
     shortcut: arx
-
-  - name: ask
-    engine: ask
-    shortcut: ask
-    disabled: true
 
   - name: azure
     engine: azure
@@ -571,6 +595,11 @@ engines:
     shortcut: cos
     disabled: true
 
+  - name: cara
+    engine: cara
+    shortcut: ca
+    disabled: true
+
   - name: chefkoch
     engine: chefkoch
     shortcut: chef
@@ -659,22 +688,6 @@ engines:
     engine: yep
     shortcut: yep
     categories: general
-    search_type: web
-    timeout: 15
-    disabled: true
-
-  - name: yep images
-    engine: yep
-    shortcut: yepi
-    categories: images
-    search_type: images
-    disabled: true
-
-  - name: yep news
-    engine: yep
-    shortcut: yepn
-    categories: news
-    search_type: news
     disabled: true
 
   - name: currency
@@ -1007,6 +1020,11 @@ engines:
     shortcut: gitea
     disabled: true
 
+  - name: gmx
+    engine: gmx
+    shortcut: gmx
+    disabled: true
+
   - name: goodreads
     engine: goodreads
     shortcut: good
@@ -1180,6 +1198,35 @@ engines:
     timeout: 3.0
     disabled: true
 
+  - name: karmasearch
+    engine: karmasearch
+    categories: [general, web]
+    search_type: web
+    shortcut: ka
+    inactive: true
+
+  - name: karmasearch images
+    engine: karmasearch
+    categories: [images, web]
+    search_type: images
+    shortcut: kai
+    paging: false
+    inactive: true
+
+  - name: karmasearch videos
+    engine: karmasearch
+    categories: [videos, web]
+    search_type: videos
+    shortcut: kav
+    inactive: true
+
+  - name: karmasearch news
+    engine: karmasearch
+    categories: [news, web]
+    search_type: news
+    shortcut: kan
+    inactive: true
+
   - name: kickass
     engine: kickass
     base_url:
@@ -1259,8 +1306,9 @@ engines:
   - name: lingva
     engine: lingva
     shortcut: lv
+    timeout: 6.0
     # set lingva instance in url, by default it will use the official instance
-    # url: https://lingva.thedaviddelta.com
+    # url: https://lingva.ml
 
   - name: lobste.rs
     engine: xpath
@@ -2105,6 +2153,7 @@ engines:
   - name: yahoo news
     engine: yahoo_news
     shortcut: yhn
+    inactive: true
 
   - name: youtube
     shortcut: yt
